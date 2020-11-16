@@ -41,10 +41,11 @@ With that in mind, I searched the web convinced there had to be a better way. Lu
 
 - Configure Git globals
 
-  - User Details
+  - User Details and default pull behavior
 
         git config --global user.name “Chris Human”
         git config --global user.email “email@email.com”
+        git config --global pull.rebase false
 
   - Set `VS Code` as Git core editor
 
