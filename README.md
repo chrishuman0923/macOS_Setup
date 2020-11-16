@@ -41,10 +41,19 @@ With that in mind, I searched the web convinced there had to be a better way. Lu
 
 - Configure Git globals
 
-  - User Details and default pull behavior
+  - Set User Details
 
         git config --global user.name “Chris Human”
         git config --global user.email “email@email.com”
+
+  - Set Global ignore file
+
+        curl https://raw.githubusercontent.com/chrishuman0923/macOS_Setup/master/config/git/.gitignore_global > ~/.gitignore_global
+
+        git config --global core.excludesfile ~/.gitignore_global
+
+  - Set Git Pull Behavior
+
         git config --global pull.rebase false
 
   - Set `VS Code` as Git core editor
