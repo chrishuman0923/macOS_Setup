@@ -6,11 +6,11 @@ Don't misunderstand, we love getting a new device. It gives us a clean slate to 
 
 But, this new device brings with it a problem. For most of us, we are going to spend the better part of a day setting it up. From downloading countless applications, to updating countless config files; it is a chore to set up a new device to make it conducive to development. The biggest worry is that we are going to forget something crucial to the zen of our workflow.
 
-With that in mind, I searched the web convinced there had to be a better way. Luckily, I am not the first developer who wished they could automate their on-boarding process. This repository serves as my documented process for simplifying the on-boarding process of a new macOS device.
+With that in mind, I was convinced there had to be a better way. Luckily, I am not the first developer who wished they could automate their on-boarding process. This repository documents my process for on-boarding a new macOS device for web application development.
 
 ## Pre-Requisites
 
-1.  Sign in to iCloud Account
+1.  Sign in to iCloud account
 1.  Download Xcode command line tools
 
     - Needed by many npm packages
@@ -29,11 +29,11 @@ With that in mind, I searched the web convinced there had to be a better way. Lu
 
           curl https://raw.githubusercontent.com/chrishuman0923/macOS_Setup/master/config/zsh/.zshrc > ~/.zshrc
 
-    - Configuration for Zsh shell command aliases
+    - Configure Zsh shell command aliases
 
           curl https://raw.githubusercontent.com/chrishuman0923/macOS_Setup/master/config/zsh/alias.zsh > $ZSH_CUSTOM/alias.zsh
 
-    - Source code for plugin
+    - Clone source code for auto-suggestion plugin
 
           git clone https://github.com/zsh-users/zsh-autosuggestions \${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestion
 
@@ -72,7 +72,7 @@ With that in mind, I searched the web convinced there had to be a better way. Lu
 
 ## SSH Key Configuration
 
-I configure Github with an ssh key to avoid entering my Github credentials each time I interact with a remote and to prevent adding my Github credentials to iCloud Keychain.
+I configure Github with an ssh key to avoid the need to enter my Github credentials each time I interact with a remote and to prevent adding my Github credentials to iCloud Keychain.
 
 - Generate ssh key for Github
 
