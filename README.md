@@ -65,7 +65,7 @@ This repository walks you through the steps (_including terminal commands and co
 - Set global ignore file
 
   ```
-  curl https://raw.githubusercontent.com/chrishuman0923/macOS_Setup/master/config/git/.gitignore_global > ~/.gitignore_global
+  curl https://raw.githubusercontent.com/chrishuman0923/macOS_Setup/master/config/git/gitignore.txt > ~/.gitignore_global
   git config --global core.excludesfile ~/.gitignore_global
   ```
 
@@ -114,7 +114,13 @@ I configure Github with an ssh key to avoid entering my Github credentials each 
 - Add private key to ssh-agent
 
   ```
-  ssh-add ~/.ssh/id_rsa_github
+  ssh-add -K ~/.ssh/id_rsa_github
+  ```
+
+- Add ssh-agent config to load key after each device restart
+
+  ```
+  curl https://raw.githubusercontent.com/chrishuman0923/macOS_Setup/master/config/ssh/config.txt > ~/.ssh/config
   ```
 
 - Copy public key to clipboard and add it to Github [here](https://github.com/settings/keys)
@@ -123,7 +129,9 @@ I configure Github with an ssh key to avoid entering my Github credentials each 
   cat ~/.ssh/id_rsa_github.pub | pbcopy
   ```
 
-- Confirm ssh authentication is set up correctly
+- Restart device
+
+- Confirm ssh authentication is set up correctly and key is being loaded after restart
 
   ```
   ssh -T git@github.com
