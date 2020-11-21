@@ -120,6 +120,12 @@ I use nvm to easily manage and switch between versions of Node.js
   nvm install stable
   ```
 
+- Run script to configure npm
+
+  ```
+  ./config/npm/npm.sh
+  ```
+
 ## VS Code
 
 - Run script to install VS Code extensions
