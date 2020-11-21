@@ -12,115 +12,63 @@ I was convinced there had to be a better way. Luckily, I am not the first develo
 
 ### TLDR
 
-This repository walks you through the steps (_including terminal commands and config files_) I take when on-boarding a new macOS device for web application development.
+This repository walks you through the steps (_including terminal commands and config files_) I use when on-boarding a new macOS device for web application development.
 
 ## Pre-Requisites
 
-1.  Sign in to iCloud account
-1.  Download Xcode command line tools
+1. Clone this repo
 
-    - Needed by many npm packages
+   ```
+   git clone https://github.com/chrishuman0923/macOS_Setup.git
+   cd macOS_Setup/
+   ```
 
-      ```
-      xcode-select --install
-      ```
+1. Sign in to iCloud account
+1. Sign in to App Store
+1. Download Xcode command line tools
 
-1.  Download Oh-My-Zsh
+   - Needed by many npm packages
 
-    - Terminal framework for adding plugins and themes to improve standard Zsh shell
+     ```
+     xcode-select --install
+     ```
 
-      ```
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-      ```
+1. Set user execution permissions to run config scripts in this repo
 
-1.  Zsh Profile, Aliases, and Plugins
+   ```
+   chmod -R u+x config
+   ```
 
-    - Configuration profile for Zsh shell
+1. Run script to handle general configuration details
 
-      ```
-      curl https://raw.githubusercontent.com/chrishuman0923/macOS_Setup/master/config/zsh/.zshrc > ~/.zshrc
-      ```
+   ```
+   ./config/general.sh
+   ```
 
-    - Configure Zsh shell command aliases
+## Zsh Configuration
 
-      ```
-      curl https://raw.githubusercontent.com/chrishuman0923/macOS_Setup/master/config/zsh/alias.zsh > $ZSH_CUSTOM/alias.zsh
-      ```
+- Run script to configure Zsh
 
-    - Clone source code for auto-suggestion plugin
-
-      ```
-      git clone https://github.com/zsh-users/zsh-autosuggestions \${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestion
-      ```
+  ```
+  ./config/zsh/zsh.sh
+  ```
 
 ## Git Configuration
 
-- Set user details
+- Run script to configure git globals
 
   ```
-  git config --global user.name “Chris Human”
-  git config --global user.email “email@email.com”
-  ```
-
-- Set global ignore file
-
-  ```
-  curl https://raw.githubusercontent.com/chrishuman0923/macOS_Setup/master/config/git/gitignore.txt > ~/.gitignore_global
-  git config --global core.excludesfile ~/.gitignore_global
-  ```
-
-- Set `git pull` default behavior
-
-  ```
-  git config --global pull.rebase false
-  ```
-
-- Set VS Code as Git core editor
-
-  ```
-  git config --global core.editor “code -w”
-  ```
-
-- Set VS Code as Git diff editor
-
-  ```
-  git config --global diff.tool vscode
-  git config --global difftool.vscode.cmd "code -w --diff $LOCAL $REMOTE"
-  ```
-
-- Set VS Code as Git merge editor
-
-  ```
-  git config --global merge.tool vscode
-  git config --global mergetool.vscode.cmd "code -w $MERGED"
+  ./config/git/git.sh
   ```
 
 ## SSH Key Configuration
 
 I configure Github with an ssh key to avoid entering my Github credentials each time I interact with a remote and to avoid adding my Github credentials to iCloud Keychain.
 
-- Generate ssh key for Github
+- Run script to generate ssh key for Github and add it to ssh-agent
 
   ```
-  ssh-keygen -t rsa -b 4096 -C email@email.com -f ~/.ssh/id_rsa_github
-  ```
-
-- Confirm ssh-agent is running
-
-  ```
-  eval "$(ssh-agent -s)"
-  ```
-
-- Add private key to ssh-agent
-
-  ```
-  ssh-add -K ~/.ssh/id_rsa_github
-  ```
-
-- Add ssh-agent config to load key after each device restart
-
-  ```
-  curl https://raw.githubusercontent.com/chrishuman0923/macOS_Setup/master/config/ssh/config.txt > ~/.ssh/config
+  ./config/ssh/ssh.sh
   ```
 
 - Copy public key to clipboard and add it to Github [here](https://github.com/settings/keys)
@@ -137,10 +85,74 @@ I configure Github with an ssh key to avoid entering my Github credentials each 
   ssh -T git@github.com
   ```
 
+## Homebrew
+
+I use Homebrew to install and manage the majority of my applications.
+
+- Run script to install Homebrew
+
+  ```
+  ./config/homebrew/homebrew.sh
+  ```
+
+- Alfred is my quick launcher of choice. Re-map `CMD + space` from Spotlight to Alfred.
+
+## App Store Apps
+
+There are a few apps that I have to get directly from the app store.
+
+- Run script to install app store apps
+
+  - _**NOTE**_: Please review this script before executing because some of the apps are not free.
+
+    ```
+    ./config/mac/apps.sh
+    ```
+
+## NVM (Node Version Manager)
+
+I use nvm to easily manage and switch between versions of Node.js
+
+- Install nvm and latest stable version of Node.js
+
+  ```
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+  nvm install stable
+  ```
+
+## VS Code
+
+- Run script to install VS Code extensions
+
+  ```
+  ./config/vscode/vscode.sh
+  ```
+
+  - If the above command fails
+    1. Open VS Code
+    1. Use `CMD + Shift + P` to open the command palette
+    1. Type `install`
+    1. Choose `Shell Command: Install 'code' command in PATH`
+    1. Restart terminal and re-run the command
+
+## Browser Extensions
+
+I am using the following browser extenions for Google Chrome.
+
+1. 1Password X - Password Manager
+1. HTTPS Everywhere
+1. JSON Formatter
+1. OneTab
+1. Privacy Badger
+1. React Developer Tools
+1. Redux DevTools
+1. Tabliss
+1. uBlock Origin
+
 ## Notes
 
-Unfortunatley, this process does not include signing in to all of the accounts for the applications installed. Maybe in a future update. 🤞🏻 😁
+Unfortunatley, this setup does not include "auto-magically" signing in to all of the accounts for the applications installed. Maybe in a future update. 🤞🏻 😁
 
 ## Acknowledgments
 
-I have to give credit to [w3cj](https://github.com/w3cj) and [nikhilgorantla](https://github.com/nikhilgorantla) for the inspiration and several of the code snippets used within this repo.
+I have to give credit to [w3cj](https://github.com/w3cj) and [nikhilgorantla](https://github.com/nikhilgorantla) for the inspiration and several of the code snippets/methods used within this repo.

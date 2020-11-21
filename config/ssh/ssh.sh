@@ -24,10 +24,10 @@ LOCAL_FILE="$HOME/.ssh/config"
 if [ ! -f "$LOCAL_FILE" ]
 then
   echo "\nCreating ssh config...\n"
-  cat "$REPO_FILE" > "$HOME/.ssh/config"
+  cp "$REPO_FILE" "$LOCAL_FILE"
 else
   echo "\nAppending to existing ssh config...\n"
-  cat "$REPO_FILE" >> "$HOME/.ssh/config"
+  cat "$REPO_FILE" >> "$LOCAL_FILE"
 fi
 
 echo "Done."

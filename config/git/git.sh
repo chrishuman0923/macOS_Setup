@@ -20,7 +20,7 @@ then
   cat "$REPO_IGNORE" >> "$LOCAL_IGNORE"
 else
   echo "\nGlobal ignore file doesn't exist, creating it..."
-  cat "$REPO_IGNORE" > "$LOCAL_IGNORE"
+  cp "$REPO_IGNORE" "$LOCAL_IGNORE"
 fi
 
 git config --global core.excludesfile "$LOCAL_IGNORE"
