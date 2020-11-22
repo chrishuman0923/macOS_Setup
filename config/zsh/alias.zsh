@@ -32,3 +32,13 @@ newdocker() {
   # Add created files and node modules directory to .dockerignore
   command echo 'Dockerfile\nDockerfile.dev\n.dockerignore\nnode_modules/' > .dockerignore
 }
+
+## Find apps running on specified port
+findport() {
+  command lsof -n -i4TCP:$1
+}
+
+## Kill process by PID
+killpid() {
+  command kill -9 $1
+}
