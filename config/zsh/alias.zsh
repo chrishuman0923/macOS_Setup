@@ -4,41 +4,49 @@
 
 ## Display current IP address ##
 myip() {
-  command curl http://ipecho.net/plain
+  curl http://ipecho.net/plain
   echo
 }
 
 ## Start new project ##
+## Parameter $1 = name of new project directory
 newproject() {
   # Make new project directory and initialize to be tracked by git
-  command mkdir $1 && cd $_
-  command git init
+  mkdir $1 && cd $_
+  git init
 
   # Create local copies of global files to commit to repo
-  command cp ~/.gitignore_global .gitignore
-  command cp ~/.editorconfig .editorconfig
+  cp ~/.gitignore_global .gitignore
+  cp ~/.editorconfig .editorconfig
 
   # Insert directory name as first line of README
-  command echo "# $1" > README.md
+  echo "# $1" > README.md
 
   # Open project directory in VS Code
-  command code .
+  code .
 }
 
 ## Create typical docker files for project ##
 newdocker() {
-  command touch Dockerfile Dockerfile.dev .dockerignore
+  touch Dockerfile Dockerfile.dev .dockerignore
 
   # Add created files and node modules directory to .dockerignore
-  command echo 'Dockerfile\nDockerfile.dev\n.dockerignore\nnode_modules/' > .dockerignore
+  echo 'Dockerfile\nDockerfile.dev\n.dockerignore\nnode_modules/' > .dockerignore
 }
 
 ## Find apps running on specified port
+## Parameter $1 = port #
 findport() {
-  command lsof -n -i4TCP:$1
+  lsof -n -i4TCP:$1
 }
 
-## Kill process by PID
+## Kill process
+## Parameter $1 = PID
 killpid() {
-  command kill -9 $1
+  kill -9 $1
+}
+
+## Generate pseudo-random string of characters
+generatesecret() {
+  node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 }
