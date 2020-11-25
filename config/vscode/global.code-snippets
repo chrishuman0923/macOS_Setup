@@ -1,0 +1,10 @@
+{
+  "Console Log": {
+    "prefix": "clog",
+    "body": ["console.log($0);"]
+  },
+  "Console Error": {
+    "prefix": "cerr",
+    "body": ["console.error($0);"]
+  }
+}
