@@ -6,7 +6,7 @@ PACKAGES=(
   christian-kohler.path-intellisense
   codezombiech.gitignore
   dbaeumer.vscode-eslint
-  dsznajder.es7-react-js-snippets
+  drKnoxy.eslint-disable-snippets
   eamodio.gitlens
   EditorConfig.EditorConfig
   eg2.vscode-npm-script
@@ -14,13 +14,13 @@ PACKAGES=(
   formulahendry.auto-close-tag
   formulahendry.auto-rename-tag
   fosshaas.fontsize-shortcuts
+  igorming.useful-react-snippets
   mhutchie.git-graph
   mikestead.dotenv
   ms-azuretools.vscode-docker
   naumovs.color-highlight
   redhat.vscode-yaml
   vscode-icons-team.vscode-icons
-  xabikos.JavaScriptSnippets
   zhuangtongfa.material-theme
   Zignd.html-css-class-completion
 )
