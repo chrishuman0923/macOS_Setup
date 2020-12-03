@@ -34,7 +34,7 @@ read -p "Do you want to set VS Code as your git core editor [y/n]? " CORE
 case $CORE in
   [yY]|[yY][eE][sS])
     echo "Git core editor set.\n"
-    git config --global core.editor “code -w”
+    git config --global core.editor "code -w"
     ;;
   *)
     echo "Skipping...\n"
