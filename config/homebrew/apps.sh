@@ -3,14 +3,20 @@
 PACKAGES=(
   1password
   alfred
+  cyberduck
   docker
+  figma
   google-chrome
+  insomnia
+  krisp
   mongodb-compass
   mysqlworkbench
-  postman
+  pgadmin4
+  slack
   visual-studio-code
   vlc
+  zoom
 )
 
 echo "Installing Cask Packages..."
-brew cask install ${PACKAGES[@]}
+brew install ${PACKAGES[@]} --cask

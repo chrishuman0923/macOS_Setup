@@ -1,38 +1,57 @@
 {
-  "auto-rename-tag.activationOnLanguage": ["html", "javascriptreact"],
-  "color-highlight.markerType": "foreground",
+  "auto-close-tag.activationOnLanguage": [
+    "html",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  "auto-rename-tag.activationOnLanguage": [
+    "html",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  "cSpell.ignorePaths": [
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders",
+    "node_modules",
+    "package.json",
+    "package-lock.json",
+    "vscode-extension"
+  ],
+  "color-highlight.markerType": "dot-before",
   "color-highlight.markRuler": false,
-  "color-highlight.matchWords": true,
   "debug.console.fontFamily": "Anonymous Pro, monospace",
   "debug.console.fontSize": 18,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "fontshortcuts.defaultFontSize": 20,
-  "fontshortcuts.defaultTerminalFontSize": 20,
-  "fontshortcuts.step": 2,
-  "eslint.alwaysShowStatus": true,
+  "diffEditor.ignoreTrimWhitespace": true,
   "editor.detectIndentation": true,
   "editor.fontFamily": "Anonymous Pro, monospace",
-  "editor.fontSize": 20,
+  "editor.fontSize": 24,
   "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
   "editor.lineHeight": 0,
+  "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
   "editor.mouseWheelZoom": true,
-  "editor.renameOnType": true,
   "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "emmet.showAbbreviationSuggestions": false,
+  "eslint.alwaysShowStatus": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
   "extensions.closeExtensionDetailsOnViewChange": true,
   "extensions.ignoreRecommendations": true,
-  "extensions.showRecommendationsOnlyOnDemand": true,
   "files.autoSave": "off",
   "files.enableTrash": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+  "fontshortcuts.defaultFontSize": 20,
+  "fontshortcuts.defaultTerminalFontSize": 20,
+  "fontshortcuts.step": 2,
+  "github.copilot.enable": { "*": true, "plaintext": false },
   "gitlens.defaultDateFormat": "MM/DD/YYYY hh:mm:ss A ZZ",
   "gitlens.defaultDateShortFormat": "MM/DD/YYYY",
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "markdown.preview.fontFamily": "Anonymous Pro, monospace",
   "markdown.preview.fontSize": 20,
   "prettier.arrowParens": "avoid",
@@ -40,53 +59,37 @@
   "prettier.endOfLine": "lf",
   "prettier.jsxBracketSameLine": false,
   "prettier.jsxSingleQuote": true,
-  "prettier.printWidth": 110,
+  "prettier.printWidth": 130,
   "prettier.singleQuote": true,
   "prettier.tabWidth": 2,
   "prettier.trailingComma": "all",
   "prettier.useTabs": false,
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
-  "terminal.integrated.confirmOnExit": true,
+  "redhat.telemetry.enabled": false,
+  "telemetry.telemetryLevel": "crash",
+  "terminal.integrated.confirmOnExit": "always",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontFamily": "Anonymous Pro, monospace",
   "terminal.integrated.fontSize": 20,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "window.zoomLevel": 0,
   "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.enablePreview": false,
-  "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.value": 5,
+  "workbench.editor.limit.enabled": false,
   "workbench.editor.openPositioning": "last",
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false,
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 16,
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[yaml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
 }

@@ -34,3 +34,9 @@ export NVM_DIR="$HOME/.nvm"
 
 ## Use latest downloaded stable verison of Node.js ##
 nvm use stable
+
+# If there is a .nvmrc file in the current directory, use that node version (https://github.com/nvm-sh/nvm#calling-nvm-use-automatically-in-a-directory-with-a-nvmrc-file)
+autoload -U add-zsh-hook
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc

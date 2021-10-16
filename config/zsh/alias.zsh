@@ -16,11 +16,13 @@ newproject() {
   git init
 
   # Create local copies of global files to commit to repo
-  cp ~/.gitignore_global .gitignore
   cp ~/.editorconfig .editorconfig
 
   # Insert directory name as first line of README
   echo "# $1" > README.md
+
+  # Add nvmrc file to project
+  node -v > .nvmrc
 
   # Open project directory in VS Code
   code .
@@ -49,4 +51,19 @@ killpid() {
 ## Generate pseudo-random string of characters
 generatesecret() {
   node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
+}
+
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  fi
 }

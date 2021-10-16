@@ -8,22 +8,7 @@ read -p "Enter your email: " EMAIL
 
 git config --global user.name "$NAME"
 git config --global user.email $EMAIL
-
-# Set global .gitignore
-REPO_IGNORE="./config/git/.gitignore"
-LOCAL_IGNORE="$HOME/.gitignore_global"
-
-# Check if local global ignore file already exists
-if [ -f "$LOCAL_IGNORE" ]
-then
-  echo "\nGlobal ignore file already exists, appending to it..."
-  cat "$REPO_IGNORE" >> "$LOCAL_IGNORE"
-else
-  echo "\nGlobal ignore file doesn't exist, creating it..."
-  cp "$REPO_IGNORE" "$LOCAL_IGNORE"
-fi
-
-git config --global core.excludesfile "$LOCAL_IGNORE"
+git config --global init.defaultBranch master
 
 # Set git rebase default behavior
 echo "Setting pull.rebase to false.."
